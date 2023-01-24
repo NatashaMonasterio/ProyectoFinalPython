@@ -1,0 +1,14 @@
+{% extends 'AppCoder/padre.html' %}
+{% load static %}
+{% block contenidoQueCambia %}
+
+
+    <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+    <div class="text-center">
+        <h1 class="mt-5">ALIMENTOS</h1>
+        <p>Aqui iran los alimentos que se venden.</p>
+        <h3 class="mb-5">Este es alimentos.html. Aun no tiene contenido.</h3>
+
+        <button class="mb-5 btn btn-secondary" ><a class="text-light" href="{% url 'AlimentosFormularios' %}">FORMULARIO DE ALIMENTOS</a></button>
+    </div>
+{% endblock %}  

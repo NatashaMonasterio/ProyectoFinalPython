@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busqueda</title>
+</head>
+<body>
+    <p> Estamos buscando la mascota: {{nombre}} </p>
+    {% if mascotas %}
+        <ul>
+            {% for mascota in mascotas %}
+                <li> {{mascota.nombre}} </li>
+                <li> Raza: {{mascota.raza}}</li>
+                <li> Edad: {{mascota.edad}}</li>
+                <li> Peso: {{mascota.peso}}</li>
+                <li> Vacunado: {{mascota.vacunado}}</li>
+                <button><a href="{% url 'BusquedaMascota' %}" style="text-decoration:none"> Volver atrás</a></button>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No existe</p>
+        <button><a href="{% url 'BusquedaMascota' %}" style="text-decoration:none"> Volver atrás</a></button>
+    {% endif %}
+</body>
+</html>

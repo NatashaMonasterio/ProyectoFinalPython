@@ -1,0 +1,17 @@
+{% extends 'AppCoder/padre.html' %}
+{% load static %}
+{% block contenidoQueCambia %}
+
+
+    <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+    <div class="text-center">
+        <h1 class="mt-5">MASCOTAS</h1>
+        <p>Aqui van las mascotas que atiende esta veterinaria</p>
+        <h3 class="mb-5">Este es mascotas.html. Aun no tiene contenido.</h3>
+
+        <button class="mb-5 btn btn-secondary" ><a class="text-light" href="{% url 'MascotasFormularios' %}">FORMULARIO DE MASCOTAS</a></button>
+        <button class="mb-5 btn btn-secondary" ><a class="text-light" href="{% url 'BusquedaMascota' %}">FORMULARIO DE BUSQUEDA DE MASCOTA</a></button>
+    </div>
+    
+
+{% endblock %}  
