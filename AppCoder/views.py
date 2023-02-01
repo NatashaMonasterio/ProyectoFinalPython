@@ -1,7 +1,7 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 from django.http import HttpResponse
 from AppCoder.forms import VeterinariosForms, AlimentosForms, MascotasForms, UserRegisterForm, UserEditForm
-from AppCoder.models import Veterinarios, Alimentos, Mascotas
+from AppCoder.models import Veterinarios, Alimentos, Mascotas, Avatar
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
@@ -34,7 +34,7 @@ def veterinariosFormularios(request):
             informacion = miFormulario.cleaned_data
             veterinarios = Veterinarios(nombre=informacion["nombre"], apellido=informacion["apellido"], matricula=informacion["matricula"])
             veterinarios.save()
-            return render(request, "AppCoder/inicio.html")
+            return redirect("LeerVeterinarios")
 
     else:
         miFormulario = VeterinariosForms()
@@ -54,7 +54,7 @@ def mascotasFormularios(request):
             return render(request, "AppCoder/inicio.html")
     else:
         miFormulario = MascotasForms()
-    return render(request, "AppCoder/mascotas.html", {"miFormulario": miFormulario})
+    return render(request, "AppCoder/inscripcionMascotas.html", {"miFormulario": miFormulario})
 
 def alimentosFormularios(request):
     if request.method == "POST":
@@ -74,7 +74,7 @@ def alimentosFormularios(request):
 # Busqueda en formulario
 
 def busquedaMascota(request):
-    return render(request, "AppCoder/busquedaMascota.html")
+    return render(request, "AppCoder/mascotas.html")
 
 def buscar(request): #busqueda usando OBJECTS.FILTER 
     if request.GET.get("nombre", None):
@@ -83,7 +83,7 @@ def buscar(request): #busqueda usando OBJECTS.FILTER
         return render(request, "AppCoder/resultadoBusqueda.html", {"mascotas": mascotas, "nombre":nombre})
     else:
         respuesta = "No existe esta mascota"
-    return render(request, "AppCoder/busquedaMascota.html")
+    return render(request, "AppCoder/mascotas.html")
 
 
 #LOGINS
@@ -153,6 +153,7 @@ def eliminarVeterinario(request, veterinario_nombre):
     contexto= {"veterinarios": veterinarios}
     return render(request, "AppCoder/veterinarios.html", contexto)
 
+
 def editarVeterinario(request, veterinario_nombre):
     veterinario = Veterinarios.objects.get(nombre = veterinario_nombre)
 
@@ -196,7 +197,7 @@ def editarPerfil(request):
 
             usuario.save()
 
-            return render(request, "AppCoder/inicio.html")
+            return redirect("LeerVeterinarios")
 
     else:
 

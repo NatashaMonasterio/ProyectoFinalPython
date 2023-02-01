@@ -1,3 +1,4 @@
 .indexFondo{
-    background-image: url(/AppCoder/static/media/logos/fondo.jpeg);
+    background-image: url("/media/logos/fondo.jpeg");
+    background-color: transparent;
 }

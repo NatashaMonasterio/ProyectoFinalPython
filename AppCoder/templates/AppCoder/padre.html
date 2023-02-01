@@ -24,6 +24,7 @@
             {% if request.user.is_authenticated %}
             <div>
                 <p class="text-muted mb-4 mb-lg-0"> Hola, {{user.username}}!!!.</p>
+                <img src="{(request.user.[avatares].imagen.url)}"/> 
                 <button class="border-secondary border-1 bg-secondary"><a href="{% url 'EditarPerfil' %}" class="text-white small text-decoration-none">Editar perfil</a></button>
                 <button class="border-secondary border-1 bg-secondary"><a href="{% url 'Logout' %}" class="text-white small text-decoration-none">Cerrar Sesion</a></button>
             </div>

@@ -9,7 +9,9 @@ urlpatterns = [
     path('veterinarios', views.leerVeterinarios, name="LeerVeterinarios"),
     path('editarVeterinario/<veterinario_nombre>', views.editarVeterinario, name = "EditarVeterinario"),
     
-    path('mascotas', views.mascotasFormularios, name="Mascotas"),
+    path('mascotas', views.mascotas, name="Mascotas"),
+    path('inscripcionMascotas', views.mascotasFormularios, name="MascotasForm"),
+
     path('alimentos', views.alimentosFormularios, name="Alimentos"),
 
     path('busquedaMascota', views.busquedaMascota, name="BusquedaMascota"),

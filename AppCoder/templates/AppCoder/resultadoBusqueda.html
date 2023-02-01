@@ -7,8 +7,9 @@
     <title>Busqueda</title>
 </head>
 <body>
-    <p> Estamos buscando la mascota: {{nombre}} </p>
+    <p> Estamos buscando : {{nombre}} </p>
     {% if mascotas %}
+        <p>Los datos ingresados son: </p>
         <ul>
             {% for mascota in mascotas %}
                 <li> {{mascota.nombre}} </li>
@@ -16,12 +17,12 @@
                 <li> Edad: {{mascota.edad}}</li>
                 <li> Peso: {{mascota.peso}}</li>
                 <li> Vacunado: {{mascota.vacunado}}</li>
-                <button><a href="{% url 'BusquedaMascota' %}" style="text-decoration:none"> Volver atrás</a></button>
             {% endfor %}
         </ul>
+        <button><a href="{% url 'Mascotas' %}" style="text-decoration:none"> Volver atrás</a></button>
     {% else %}
         <p>No existe</p>
-        <button><a href="{% url 'BusquedaMascota' %}" style="text-decoration:none"> Volver atrás</a></button>
+        <button><a href="{% url 'Mascotas' %}" style="text-decoration:none"> Volver atrás</a></button>
     {% endif %}
 </body>
 </html>
