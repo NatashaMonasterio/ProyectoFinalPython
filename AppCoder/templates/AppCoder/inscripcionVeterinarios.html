@@ -2,15 +2,9 @@
 {% load static %}
 {% block contenidoQueCambia %}
 
-
     <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
-    <div class="text-center">
-        <h1 class="mt-5">ALIMENTOS</h1>
-        <p>Aqui iran los alimentos que se venden.</p>
 
-    </div>
-
-    <h1>FORMULARIO PARA ALIMENTOS</h1>
+    <h1>FORMULARIO PARA VETERINARIOS</h1>
     {% if miFormulario.errors %}
         <p style="color: red;"> Están mal los datos, revisar</p>
     {% endif %}
@@ -19,8 +13,10 @@
         <table>
             {{ miFormulario.as_table }}
         </table>
-            
-        <input type="submit" value="Enviar"/>
-    </form>
+        
+        <button type="submit">Enviar </button>
 
+    </form>
+    
+    
 {% endblock %}  

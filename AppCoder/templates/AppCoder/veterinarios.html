@@ -2,15 +2,26 @@
 {% load static %}
 {% block contenidoQueCambia %}
 
-
     <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
-    <div class="text-center">
-        <h1 class="mt-5">VETERINARIOS</h1>
-        <p>Aqui iran ingresados los empleados veterinarios </p>
-        <h3 class="mb-5">Este es veterinarios.html. Aun no tiene contenido.</h3>
 
-        <button class="mb-5 btn btn-secondary" ><a class="text-light" href="{% url 'VeterinariosFormularios' %}">FORMULARIO DE VETERINARIOS</a></button>
+    <div class="text-center">
+        <h1 class="mb-5">VETERINARIOS</h1>
+        <h4> Los veterinarios de nuestra empresa son: </h4>
+
+        {% for x in veterinarios %}
+        <div>
+            <li>{{x}}</li>
+            <button class="border-secondary border-1 bg-secondary"><a href="{% url 'EliminarVeterinario' x.nombre %}" class="text-white small text-decoration-none">Eliminar</a></button>
+            <button class="border-secondary border-1 bg-secondary"><a href="{% url 'EditarVeterinario' x.nombre %}" class="text-white small text-decoration-none">Editar datos</a></button>
+        </div>
+            
+        {% endfor %}
+
     </div>
-    
-    
+   
+    <div class="text-center py-4">
+        <button class="rounded bg-dark"><a href="{% url 'Veterinarios' %}" class=" text-white text-decoration-none" >DAR DE ALTA NUEVO VETERINARIO/A</a></button>
+    </div>
+
+
 {% endblock %}  
