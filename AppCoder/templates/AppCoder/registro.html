@@ -9,11 +9,12 @@
 </head>
 <body>
     <div class="text-center bg-dark text-white" ><h1>REGISTER</h1></div>
-    <h5 class="text-center pt-5">Es necesario que complete el siguiente formulario para poder registrarse en nuestra pagina: </h5>
+    <h5 class="text-center pt-5">Si no tiene una cuenta creada, es necesario que complete el siguiente formulario para poder registrarse en nuestra pagina: </h5>
     <div class="text-center border rounded border-dark border-2 py-4 position-absolute top-50 start-50 translate-middle bg-white" style="width:25%">
         <form action="" method="POST"> {% csrf_token %} 
             {{ form.as_p }}
-            <button type="submit">Registrarse</button>>
+            <p class="text-danger">Una vez registrado/a, deberas iniciar sesion</p>
+            <button type="submit" class="rounded p-1">Registrarse</button>
         </form>
     </div>
 </body>

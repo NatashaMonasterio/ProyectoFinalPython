@@ -1,7 +1,7 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.http import HttpResponse
 from AppCoder.forms import VeterinariosForms, AlimentosForms, MascotasForms, UserRegisterForm, UserEditForm
-from AppCoder.models import Veterinarios, Alimentos, Mascotas, Avatar
+from AppCoder.models import Veterinarios, Alimentos, Mascotas
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
@@ -114,8 +114,7 @@ def login_request(request):
                 return render(request, "AppCoder/inicio.html", {"mensaje":"Datos incorrectos"})
            
         else:
-
-            return render(request, "AppCoder/inicio.html", {"mensaje":"Formulario erroneo"})
+            return redirect("Register")
 
     form = AuthenticationForm()
 
@@ -132,7 +131,7 @@ def register(request):
 
                   username = form.cleaned_data['username']
                   form.save()
-                  return render(request,"AppCoder/inicio.html" ,  {"mensaje":"Usuario Creado :)"})
+                  return redirect("Login")
 
       else:
             #form = UserCreationForm()       

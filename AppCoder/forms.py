@@ -12,13 +12,11 @@ class MascotasForms(forms.Form):
     raza= forms.CharField(max_length=30)
     edad= forms.IntegerField()
     peso= forms.IntegerField()
-    vacunado = forms.BooleanField()
 
 class AlimentosForms(forms.Form):
     animal= forms.CharField(max_length=30)
     nombre= forms.CharField(max_length=30)
     precio= forms.IntegerField()
-    cantidad= forms.IntegerField()
 
 class UserRegisterForm(UserCreationForm):
     email = forms.EmailField()

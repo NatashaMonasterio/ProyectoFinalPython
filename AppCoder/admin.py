@@ -8,4 +8,3 @@ from .models import * #importamos el archivo models
 admin.site.register(Veterinarios)
 admin.site.register(Mascotas)
 admin.site.register(Alimentos)
-admin.site.register(Avatar)
