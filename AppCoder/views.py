@@ -54,7 +54,7 @@ def mascotasFormularios(request):
 
         if miFormulario.is_valid:
             informacion = miFormulario.cleaned_data
-            mascotas = Mascotas(nombre=informacion["nombre"], raza=informacion["raza"], edad=informacion["edad"], peso=informacion["peso"], vacunado=informacion["vacunado"])
+            mascotas = Mascotas(nombre=informacion["nombre"], raza=informacion["raza"], edad=informacion["edad"], peso=informacion["peso"])
             mascotas.save()
             return redirect("Mascotas")
     else:
@@ -69,7 +69,7 @@ def alimentosFormularios(request):
 
         if miFormulario.is_valid:
             informacion = miFormulario.cleaned_data
-            alimentos = Alimentos(animal=informacion["animal"], nombre=informacion["nombre"], precio=informacion["precio"], cantidad=informacion["cantidad"])
+            alimentos = Alimentos(animal=informacion["animal"], nombre=informacion["nombre"], precio=informacion["precio"])
             alimentos.save()
             return redirect("Alimentos")
     else:
@@ -211,7 +211,7 @@ def editarPerfil(request):
 
             usuario.save()
 
-            return redirect("LeerVeterinarios")
+            return redirect("Inicio")
 
     else:
 
