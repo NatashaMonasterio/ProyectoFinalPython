@@ -1,0 +1,21 @@
+{% extends 'AppCoder/padre.html' %}
+{% load static %}
+{% block contenidoQueCambia %}
+
+
+    <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+    <h4 class="text-center my-4">Para contactarte con la empresa podras enviarnos un mail y te contestaremos a la brevedad.</h4>
+    <h4 class="text-center">Completa el siguiente formulario con el mensaje que quieras hacernos llegar:</h4>
+    <form>
+        <div class="text-center my-5 ">
+            <div class="my-2"><label class="fw-bold">Nombre:</label><input type="text">  </div>  
+            <div class="my-2"><label class="fw-bold">Apellido: </label> <input type="text"></div>
+            <div class="my-2"><label class="fw-bold">Email: </label> <input type="email"></div>
+            <div class="my-2"><label class="fw-bold">Teléfono: </label> <input type="number"></div>
+            <div><input placeholder="Escribe tu mensaje..."></div>
+            <input type="submit" value="Enviar" class="btn btn-primary my-3">
+        </div>
+        
+    </form>
+
+{% endblock %}  

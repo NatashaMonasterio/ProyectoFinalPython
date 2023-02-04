@@ -1,0 +1,23 @@
+{% extends 'AppCoder/padre.html' %}
+{% load static %}
+{% block contenidoQueCambia %}
+
+<div class="bg-dark">
+    <h3 class="text-center pt-3 text-white">FORMULARIO PARA ALIMENTOS</h3>
+    {% if miFormulario.errors %}
+        <p style="color: red;"> Están mal los datos, revisar</p>
+    {% endif %}
+    <div class="d-flex justify-content-center text-white">
+        <form action="" method="POST"> {% csrf_token %}
+            <table class="my-4">
+                {{ miFormulario.as_table }}
+            </table>
+                
+            <input type="submit" value="Enviar" class="mb-3 btn btn-primary" />
+            <button class="mb-3 btn btn-primary"><a href="{% url 'Alimentos' %}" class="text-white text-decoration-none">Volver atras</a></button>
+        </form>
+    </div>
+    
+</div>
+
+{% endblock %}  

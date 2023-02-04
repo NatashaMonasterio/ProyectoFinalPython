@@ -1,0 +1,24 @@
+{% extends 'AppCoder/padre.html' %}
+{% load static %}
+{% block contenidoQueCambia %}
+
+    <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+    <div class="text-center">
+        <h1 class="mb-5">MASCOTAS</h1>
+        <h4> Las mascotas que atiende nuestra empresa son: </h4>
+
+        {% for x in mascotas %}
+        <div>
+            <li>{{x}}</li>
+        </div>
+            
+        {% endfor %}
+
+    </div>
+
+    <div class="text-center py-4">
+        <button class="rounded bg-dark"><a href="{% url 'Mascotas' %}" class=" text-white text-decoration-none" >Volver atras</a></button>
+    </div>
+
+
+{% endblock %}  

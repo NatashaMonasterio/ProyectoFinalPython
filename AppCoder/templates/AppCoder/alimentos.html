@@ -4,23 +4,20 @@
 
 
     <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+    
     <div class="text-center">
-        <h1 class="mt-5">ALIMENTOS</h1>
-        <p>Aqui iran los alimentos que se venden.</p>
+        <h1 class="my-3">ALIMENTOS</h1>
+        <h4> Los alimentos que vendemos son: </h4>
 
+        {% for x in alimentos %}
+            <div class="py-2">
+                <li>{{x}}</li>        
+            <div>
+        {% endfor %}
     </div>
 
-    <h1>FORMULARIO PARA ALIMENTOS</h1>
-    {% if miFormulario.errors %}
-        <p style="color: red;"> Están mal los datos, revisar</p>
-    {% endif %}
-
-    <form action="" method="POST"> {% csrf_token %}
-        <table>
-            {{ miFormulario.as_table }}
-        </table>
-            
-        <input type="submit" value="Enviar"/>
-    </form>
+    <div class="text-center py-4">
+        <button class="rounded bg-dark"><a href="{% url 'AlimentosForm' %}" class=" text-white text-decoration-none" >SUBIR NUEVO PRODUCTO</a></button>
+    </div>
 
 {% endblock %}  

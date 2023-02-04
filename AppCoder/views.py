@@ -21,6 +21,11 @@ def mascotas(request):
 def alimentos(request):
     return render(request, "AppCoder/alimentos.html")
 
+def aboutMe(request):
+    return render(request, "AppCoder/aboutMe.html")
+
+def contacto(request):
+    return render(request, "AppCoder/contacto.html")
 
 #FORMULARIOS
 
@@ -51,7 +56,7 @@ def mascotasFormularios(request):
             informacion = miFormulario.cleaned_data
             mascotas = Mascotas(nombre=informacion["nombre"], raza=informacion["raza"], edad=informacion["edad"], peso=informacion["peso"], vacunado=informacion["vacunado"])
             mascotas.save()
-            return render(request, "AppCoder/inicio.html")
+            return redirect("Mascotas")
     else:
         miFormulario = MascotasForms()
     return render(request, "AppCoder/inscripcionMascotas.html", {"miFormulario": miFormulario})
@@ -66,10 +71,10 @@ def alimentosFormularios(request):
             informacion = miFormulario.cleaned_data
             alimentos = Alimentos(animal=informacion["animal"], nombre=informacion["nombre"], precio=informacion["precio"], cantidad=informacion["cantidad"])
             alimentos.save()
-            return render(request, "AppCoder/inicio.html")
+            return redirect("Alimentos")
     else:
         miFormulario = AlimentosForms()
-    return render(request, "AppCoder/alimentos.html", {"miFormulario": miFormulario})
+    return render(request, "AppCoder/formAlimentos.html", {"miFormulario": miFormulario})
 
 # Busqueda en formulario
 
@@ -120,7 +125,7 @@ def login_request(request):
 def register(request):
 
       if request.method == 'POST':
-
+            
             #form = UserCreationForm(request.POST)
             form = UserRegisterForm(request.POST)
             if form.is_valid():
@@ -141,6 +146,16 @@ def leerVeterinarios(request):
     veterinario= Veterinarios.objects.all()
     contexto= {"veterinarios": veterinario}
     return render(request, "AppCoder/veterinarios.html", contexto)
+
+def leerMascotas(request):
+    mascota = Mascotas.objects.all()
+    contexto= {"mascotas": mascota}
+    return render(request, "AppCoder/leerMascotas.html", contexto)
+
+def leerAlimentos(request):
+    alimento = Alimentos.objects.all()
+    contexto = {"alimentos": alimento}
+    return render(request, "AppCoder/alimentos.html", contexto)
 
 
 #CRUD - DELETE:

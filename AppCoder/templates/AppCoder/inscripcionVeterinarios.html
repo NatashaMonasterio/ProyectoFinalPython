@@ -4,19 +4,23 @@
 
     <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
 
-    <h1>FORMULARIO PARA VETERINARIOS</h1>
-    {% if miFormulario.errors %}
-        <p style="color: red;"> Están mal los datos, revisar</p>
-    {% endif %}
-
-    <form action="" method="POST"> {% csrf_token %}
-        <table>
-            {{ miFormulario.as_table }}
-        </table>
-        
-        <button type="submit">Enviar </button>
-
-    </form>
+    <div class="bg-dark pt-3">
+        <h1 class="text-center text-white mb-3">FORMULARIO PARA VETERINARIOS</h1>
+        {% if miFormulario.errors %}
+            <p style="color: red;"> Están mal los datos, revisar</p>
+        {% endif %}
+        <div class="d-flex justify-content-center text-white">
+            <form action="" method="POST"> {% csrf_token %}
+                <table>
+                    {{ miFormulario.as_table }}
+                </table>
+                
+                <button type="submit" class="btn btn-primary my-4">Enviar </button>
+                <button class="btn btn-primary"><a href="{% url 'LeerVeterinarios' %}" class="text-white text-decoration-none">Volver atras</a></button>
+            </form>
+        </div>
+    
+    </div>
     
     
 {% endblock %}  

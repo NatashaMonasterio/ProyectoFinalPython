@@ -1,0 +1,27 @@
+{% extends 'AppCoder/padre.html' %}
+{% load static %}
+{% block contenidoQueCambia %}
+
+
+    <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+    <h3 class="text-center text-white bg-dark py-3" >About me</h3>
+    <div class="text-center border border-5 border-info py-2">
+        <h4>Bienvenidos a veterinaria "PETHOUSE"</h4>
+        <p class="mb-1">Esta pagina es creada por: Natasha Monasterio</p>
+        <p>Estudiante de CoderHouse</p>
+    </div>
+    <div class="text-center py-3 fs-5 mx-5">
+        <p>Mi nombre es Natasha Monasterio, cree esta pagina en la que todos aquellas personas que deseen verla, deberan crearse un usuario, y en el caso que ya lo tengan creado podran acceder directamente con su clave y contraseña.</p>
+        <p>La pagina cuenta con un inicio donde se podrá ver el logo de la veterinaria, luego cuenta con otras paginas a las que se puede acceder como:</p>
+        
+    </div>
+    <div class="mx-5 pb-4 border border-5">
+        <li><span class="fw-bold">Veterinarios</span>--> En la cual se podran ver todos los veterinarios que trabajan en esta empresa. Y en el caso que aun no este dado de alta podra hacerlo.</li>
+        <li><span class="fw-bold">Mascotas</span> --> En la cual podran ver las mascotas que son atendidas en esta veterinaria. Y si aun no esta cargada, podra darse de alta. A su vez, se podra hacer una busqueda de mascota por su nombre.</li>
+        <li><span class="fw-bold">Alimentos </span>--> En la cual podran ver los alimentos que estan en venta por la veterinaria. Y a su vez recargar nuevos alimentos.</li>
+    </div>
+    <div class="text-center mx-5 fs-5 my-3">
+        <p>En nuestro pie de página se podra encontrar datos como locacion y horarios de atencion de la veterinaria, y a su vez un link de contacto que al apretar nos enviará a un formulario en el cual se podran contactar.</p>
+    </div>
+   
+{% endblock %}  

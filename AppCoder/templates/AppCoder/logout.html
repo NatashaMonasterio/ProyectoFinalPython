@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Logout</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
-<body>
-    <h4 class="text-center bg-dark text-white py-4">Te has deslogueado... </h4>
-    <button class="border-secondary border-1 bg-secondary"><a href="{% url 'Inicio' %}" class="text-white small text-decoration-none">Volver a recargar pagina web</a></button>
+<body class="bg-dark">
+    <h3 class="text-center text-white py-4 mt-5">Te has deslogueado... </h3>
+    <div class="text-center">
+        <button class="btn btn-light bg-info border-3"><a href="{% url 'Inicio' %}" class="text-dark small text-decoration-none fw-bold">Volver a recargar pagina web</a></button>
+    </div>
 </body>
 </html>
